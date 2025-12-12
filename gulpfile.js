@@ -15,7 +15,7 @@ const paths = {
     watch: 'src/**/*.pug',
 
     // 編譯輸出資料夾
-    dest: 'dist'
+    dest: 'docs'
   }
 };
 
