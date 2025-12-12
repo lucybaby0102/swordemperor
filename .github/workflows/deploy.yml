@@ -1,0 +1,54 @@
+# .github/workflows/deploy.yml
+name: Deploy to GitHub Pages
+
+on:
+  # 當 master 分支有新的提交 (Push) 時執行此工作流
+  push:
+    branches:
+      - master
+  
+  # 允許手動運行工作流
+  workflow_dispatch:
+
+# 設置權限，允許將內容寫入 Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 檢查專案程式碼
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      # 設置 Node.js 環境 (如果您的專案需要編譯)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # 建議使用長期支持版本
+          
+      # 安裝依賴並運行 Gulp/編譯 (如果需要)
+      - name: Install dependencies and Build
+        run: |
+          npm install
+          # 運行您的 Gulp 預設任務
+          npm run default || gulp default 
+
+      # 設定 GitHub Pages 環境
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      # 將 /dist 資料夾的內容上傳到 Pages artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # 關鍵設定：指定 Pages 應該發佈的資料夾
+          path: 'dist' 
+
+      # 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
