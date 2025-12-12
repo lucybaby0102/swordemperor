@@ -1,0 +1,5 @@
+# .gitignore 檔案內容範例
+/node_modules
+/src
+/.vscode
+/swordemperor/

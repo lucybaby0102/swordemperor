@@ -1,0 +1,1 @@
+!function(){const e=document.querySelector(".bg-canvas"),t=e.getContext("2d"),n=document.querySelector(".bg-video");n.addEventListener("play",(function i(){if(e.width=e.clientWidth,e.height=e.clientHeight,n.paused||n.ended)return!1;t.drawImage(n,0,0,e.width,e.height),requestAnimationFrame(i)}))}();
