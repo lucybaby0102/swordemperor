@@ -1,0 +1,157 @@
+mixin aside(src,id,img,target="_blank")
+	li
+		a(href=`${src}` id=`${id}` target=`${target}`) 
+			img(src=`${img}`, alt="")
+
+aside.aside 
+	ul 
+		//- +aside('http://hot.mangot5.com/game/hot/event/detail/?contentNo=45130','','images/aside_1.png')
+		+aside('https://www.mangot5.com/Index/Member/Register?gname=hot#step-1',`'${sidebar_regsiter_id}'`,'images/aside_2.png')
+		+aside('https://hot.mangot5.com/game/hot/download',`'${sidebar_download_id}'`,'images/aside_3.png')
+		//- +aside('https://www.facebook.com/HOT.mangot5','','images/aside_4.png')
+		//- +aside('javascript:void(0)','pup_notice','images/aside_5.png','_self')
+
+aside2.aside2
+	ul 
+		+aside('http://hot.mangot5.com/game/hot/event/detail/?contentNo=45130','','images/aside_1.png')
+		+aside('javascript:void(0)','pup_notice','images/aside_5.png','_self')
+
+main.text-center#home
+	//- #leaves
+	//- 	i
+	//- 	i
+	//- 	i
+	//- 	i
+	//- 	i
+	//- 	i
+	//- 	i
+	//- 	i
+	//- 	i
+	//- 	i
+	//- 	i
+	//- 	i
+	//- 	i
+	//- 	i
+	//- 	i
+	.falling-leaves
+	div(class="char char4")
+		img(class="wow animate__animated animate__bounceInLeft" data-wow-delay=".5s" src="images/main_char4.png", alt="")
+	div(class="char char2")
+		img(class="wow animate__animated animate__bounceInRight" data-wow-delay=".5s" src="images/main_char2.png", alt="")
+	div(class="char char3")
+		img(class="wow animate__animated animate__bounceInRight" data-wow-delay=".6s" src="images/main_char3.png", alt="")
+
+	div(class="con")
+		div(class="title wow animate__animated animate__fadeInDown" data-wow-delay=".4s")
+			img(src="images/main_title.png", alt="劍皇的聖地")
+
+	div(class="char char1")
+		img(class="wow animate__animated animate__bounceInLeft" data-wow-delay=".6s" src="images/main_char1.png", alt="")
+
+
+	div(class="logo wow animate__animated animate__fadeInDown" data-wow-delay=".6s") 
+		a(href="https://hot.mangot5.com/hot/index" target="_blank") 
+			img(src="images/main_logo.png", alt="新熱血江湖")
+#particles-js
+	canvas.particles-js-canvas-el
+
+section.section_1
+
+	mixin tab_pills(id,classs,href,selected,img)
+		a(id=`${id}` class=`nav-link ${classs}` data-toggle='pill' href=`${href}` role='tab' aria-controls=`${href}` aria-selected=`${selected}`)
+			img(src=`images/${img}.png`)
+
+	#v-pills-tab.nav.nav-pills(role='tablist' aria-orientation='vertical')
+		+tab_pills(`v-pills-map-tab`,`active`,`#v-pills-map`,`true`,`tab_1`)
+		+tab_pills(`v-pills-gifts-tab`,``,`#v-pills-gifts`,`false`,`tab_2`)
+		+tab_pills(`v-pills-swimsuit-tab`,``,`#v-pills-swimsuit`,`false`,`tab_3`)
+		+tab_pills(`v-pills-ranking-tab`,``,`#v-pills-ranking`,`false`,`tab_4`)
+		
+		
+	mixin tab_pane(id,classs,aria,img_title,img_con)
+		div(id=`${id}` class=`tab-pane fade ${classs}` role='tabpanel' aria-labelledby=`${aria}`)
+			div.title: img(src=`images/${img_title}.png`, alt="")
+			div.con
+				img(src=`images/${img_con}.png`, alt="")
+				if block
+					block
+	#v-pills-tabContent.tab-content
+		.wrapper
+			+tab_pane(`v-pills-map`,`show active`,`v-pills-map-tab`,`s1_title1`,`s1_con1`)
+
+			+tab_pane(`v-pills-gifts`,``,`v-pills-gifts-tab`,`s1_title2`,`s1_con2`)
+				div(class="char char1")
+					img(src="images/s1_2_char.png", alt="")
+					div(class="props_btn")
+						-for(let i = 1; i < 3; i++)
+							a(type="button" class=`pup_btn s1_pup_btn${i}` data-toggle="modal" data-target=`#pup${i}`)
+								img(src=`images/s1_pup_btn${i}.png` alt="")
+				.event 
+					img(src="images/s1_con3.png", alt="")
+					.s1_3_char
+						img(src="images/s1_3_char.png", alt="")
+
+			+tab_pane(`v-pills-swimsuit`,``,`v-pills-swimsuit-tab`,`s1_title3`,`s3_con1`)
+				div(class="open_area")
+					.summer_char
+						img(src="images/s3_1_char.png", alt="")
+					div(class="sunmmer_btn")
+						-for(let i = 3; i < 7; i++)
+							a(type="button" class=`pup_btn s3_pup_btn${i}` data-toggle="modal" data-target=`#pup${i}`)
+								img(src=`images/s3_pup_btn${i}.png` alt="")
+				div(class="swimsuit_show")
+					.sale_title: img(src="images/s3_title2.png", alt="")
+					.sale_char
+						img(src="images/s3_2_char.png", alt="")
+					.sale_area 
+						div(class="row tabpane" role="tabpanel")
+							div(class="sale_list")
+								div#myList(class="list-group" role="tablist")
+									a(class="tab_btn tab_btn7 active" 
+											data-toggle="tab" href=`#chicken7` role="tab")
+											img(src="images/s3_pup_btn7.png", alt="")
+									-for( i=8 ; i <= 9 ; i++)
+										a(class=`tab_btn tab_btn${i}`
+											data-toggle="tab" href=`#chicken${i}` role="tab")
+											img(src=`images/s3_pup_btn${i}.png`, alt="")
+
+							div(class="sale_con" role="tabpanel")
+								div(class="tab-content")
+									div(class="tab-pane active" id="chicken7" role="tabpanel")
+										.row.d-flex.align-items-end
+											.col-12
+												img(src=`images/s3_pup5_con.png`, alt="")
+									-for( i=8 ; i <= 9 ; i++)
+										div(class="tab-pane"
+											id=`chicken${i}` role="tabpanel")
+											.row.d-flex.align-items-end
+												.col-12
+													img(src=`images/s3_pup${i}_con.png`, alt="")
+
+			+tab_pane(`v-pills-ranking`,``,`v-pills-ranking-tab`,`s4_title`,`s4_con1`)
+				div(class="char s4_char")
+					img(src="images/s4_char.png", alt="")
+
+div#notice.notice
+	.wrapper 
+		#close1.close.close1
+			img(src="images/notice_x.png", alt="")
+		.con 
+			img(src="images/notice_con.png", alt="")
+
+
+mixin pop_modal(id, img)
+	div(id=`${id}` class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true")
+		.modal-dialog
+			button(type="button" class="btn" data-dismiss="modal"): img(src="images/notice_x.png", alt="")
+		.modal-content
+			.container
+				img(src=`images/${img}.png`, alt="")
+
++pop_modal("pup1", "s1_pup1_con1")
++pop_modal("pup2", "s1_pup2_con2")
++pop_modal("pup3", "s3_pup1_con")
++pop_modal("pup4", "s3_pup2_con")
++pop_modal("pup5", "s3_pup3_con")
++pop_modal("pup6", "s3_pup4_con")
+

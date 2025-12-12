@@ -1,0 +1,27 @@
+- 
+	var obj = [
+		{ link: 'https://forum.gamer.com.tw/A.php?bsn=8294', text: '巴哈' },
+		{ link: 'https://www.facebook.com/HOT.mangot5', text: 'FB' },
+		{ link: 'https://www.mangot5.com/Index/Member/Register?gname=hot#step-1', text: '註冊', id : `${nav_regsiter_id}` },
+		{ link: 'https://hot.mangot5.com/game/hot/download', text: '下載', id : `${nav_download_id}` },
+		{ link: 'https://www.mangot5.com/Index/Member/Login?ref=/Index/Billing/MyCard/Payment', text: '儲值' },
+		{ link: 'https://www.mangot5.com/Index/Member/Login', text: '登入', id : `${nav_login_id}`},
+		{ link: 'https://hot.mangot5.com/hot/index', text: '回官網' }
+	]
+
+nav#nav-main(class="navbar navbar-expand-lg navbar-dark")
+	div.container
+		a.navbar-brand(href="https://www.mangot5.com/Index")
+			img(src="images/logo_mangot5.png" alt="happytuk")
+		button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation")
+			span(class="navbar-toggler-icon")
+		
+		div#navbarColor01(class="collapse navbar-collapse")
+			ul(class="navbar-nav me-auto mb-2 mb-lg-0")
+				each item in obj
+					li(class="nav-item"): a(
+						class="nav-item"
+						href=`${item.link}` 
+						id=`${item.id}`
+						target="_blank"
+						) #{item.text}

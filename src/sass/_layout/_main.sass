@@ -1,0 +1,525 @@
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover,.nav-tabs>li>a:hover,.nav-tabs>li>a,.nav-tabs
+	background-color: unset
+	border: unset
+	line-height: unset
+li
+	list-style: none
+body::-webkit-scrollbar 
+	display: none
+body
+	background-color: $bgColor
+	background-repeat: no-repeat
+	background-position: center 100vh
+	background-size: cover
+	+media-narrow()
+		background-position: center 65vh
+		background-size: cover
+	.container
+		text-align: center
+	.modal-backdrop.show
+		opacity: .9
+	a
+		background-color: unset
+	img
+		max-width: 100%
+	h3
+		font-size: 30px
+		line-height: 60px
+		color: $white
+		font-weight: 500
+		margin-top: 50px
+		+media-sp
+			font-size: 20px
+			line-height: 40px
+	h4
+		font-size: 26px
+		line-height: 40px
+		color: $subColor
+		font-weight: 600
+		margin-top: 50px
+		+media-sp
+			font-size: 20px
+			line-height: 30px
+	h5
+		color: $subColor
+		font-size: 26px
+		line-height: 50px
+		font-weight: 600
+		margin-top: 40px
+		+media-sp
+			font-size: 20px
+			line-height: 30px
+	p
+		font-size: 20px
+		line-height: 24px
+		letter-spacing: 0px
+		color: $mainColor
+		font-weight: 500
+
+		+media-sp
+			font-size: 16px
+			line-height: 20px
+	p.note_text
+		color: $subColor
+		+media-sp
+			font-size: 12px
+	p.indent
+		text-indent: -15px
+		padding-left: 15px
+	p.gray
+		color: $gray
+		font-size: 16px
+		font-weight: 800
+	button
+		border: none
+		background: unset
+	
+	.mt-20
+		margin-top: 20px
+	.mt-100
+		margin-top: 100px
+	.mt-200
+		margin-top: 200px
+	.mb-100
+		margin-bottom: 100px
+	.d-flex
+		display: flex
+		justify-content: center
+
+section
+	position: relative
+	min-height: 100vh
+	align-items: center
+	background: url('../images/s1_bg.png') no-repeat center bottom
+	background-size: cover
+	// overflow: hidden
+	+media-sptb
+		min-height: 93vh
+
+
+.nav-pills
+	background: url('../images/nav_pills_bg.png') no-repeat center bottom
+	background-size: cover
+	position: sticky
+	padding-left: 50px
+	flex-direction: row
+	justify-content: center
+	top: 53px
+	z-index: 99
+	+media-pad
+		flex-direction: row
+		justify-content: center
+		padding-left: 0px
+
+	.nav-link
+		// width: 40%
+	.nav-link,.nav-link.active
+		border: unset
+		background-color: unset
+		padding: 8px
+		+media-pad
+			padding: 5px
+			width: 49%
+		+media-narrow
+			padding: 0
+			width: 50%
+	#v-pills-map-tab 
+		&.active,&:hover
+			img
+			content: url('../images/tab_1_on.png')
+
+	#v-pills-gifts-tab
+		&.active,&:hover
+			img
+			content: url('../images/tab_2_on.png')
+
+	#v-pills-swimsuit-tab 
+		&.active,&:hover
+			img
+			content: url('../images/tab_3_on.png')
+
+	#v-pills-ranking-tab
+		&.active,&:hover
+			img
+			content: url('../images/tab_4_on.png')
+
+
+.tab-content
+	position: relative
+	width: 100%
+	// margin-bottom: 150px
+	// +media-pad
+	// 	margin: 0
+
+	.wrapper
+		position: relative
+		// left: 48%
+		top: 50%
+		// transform: translate(-45%, 0%)
+		width: 1380px
+		max-width: 100%
+		height: 0px
+		padding-bottom: 43%
+		+media-pad
+			position: relative
+			padding-bottom: 100%
+			left: 45%
+			padding-bottom: 60%
+		+media-narrow
+			padding-bottom: 145%
+
+	.tab-pane
+		position: absolute
+		top: 0px
+		left: 0px
+		width: 100%
+		height: 100%
+		padding-top: 20px
+		overflow-y: scroll
+		pointer-events: none
+		
+		+media-narrow
+			padding: 20px 20px 0
+		&.active
+			pointer-events: auto
+		.title
+			margin: auto
+			text-align: center
+		.con
+			margin: auto
+			text-align: center
+			height: 100%
+			width: 100%
+		+media-sptb
+			height: 80%
+		+media-pad
+			padding-top: 20px
+	#v-pills-gifts
+		.char1
+			position: relative
+			max-height: 835px
+			.props_btn
+				width: 100%
+				position: absolute
+				top: 0
+				bottom: 0
+				display: flex
+				justify-content: space-evenly
+				align-items: center
+			+media-narrow
+				top: unset
+				bottom: 50px
+				transform: scale(0.95)
+			a.s1_pup_btn1
+				+media-narrow
+					padding-right: 20px
+				img
+					&:hover 
+						content: url('../images/s1_pup_btn1_on.png')
+
+			a.s1_pup_btn2
+				img
+				&:hover 
+					content: url('../images/s1_pup_btn2_on.png')
+		.event
+			position: relative
+			padding: 100px 0
+			.s1_3_char
+				position: absolute
+				top: 0
+				right: 0
+				img
+					+media-pad
+						opacity: 0
+	#v-pills-swimsuit
+		padding-top: 50px
+		.open_area
+			position: relative
+		.summer_char
+			padding-top: 100px
+			+media-pad
+				padding: unset
+				margin-top: 80px
+		.sunmmer_btn
+			width: 100%
+			height: 100vh
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50% , -50%)
+			+media-narrow
+				height: 100%
+			.s3_pup_btn3
+				position: absolute
+				left: 24%
+				top: 220px
+				+media-pad
+					left: 14%
+				+media-narrow
+					position: relative
+					width: 43%
+					left: -6%
+					top: 134px
+			img
+				&:hover 
+					content: url('../images/s3_pup_btn3_on.png')
+			.s3_pup_btn4
+				position: absolute
+				right: 22%
+				top: 220px
+				+media-pad
+					right: 0
+				+media-narrow
+					width: 43%
+					position: relative
+					top: 130px
+					right: -30px
+				
+				img
+					&:hover 
+						content: url('../images/s3_pup_btn4_on.png')
+			.s3_pup_btn5
+				position: absolute
+				left: 26%
+				top: 500px
+				+media-pad
+					left: 18%
+				+media-narrow
+					width: 43%
+					position: relative
+					left: 0px
+					top: 120px
+				img
+					&:hover 
+						content: url('../images/s3_pup_btn5_on.png')
+			.s3_pup_btn6
+				position: absolute
+				right: 25%
+				top: 500px
+				+media-pad
+					right: 5%
+				+media-narrow
+					width: 43%
+					position: relative
+					right: 0px
+					top: 120px
+				img
+					&:hover 
+						content: url('../images/s3_pup_btn6_on.png')
+		.swimsuit_show
+			position: relative
+			margin-top: 100px
+			+media-pad
+				margin-top: 80px
+				height: 100%
+		.sale_title
+			margin: 50px 0
+			+media-narrow
+				margin: 20px 0
+		.sale_char
+			position: absolute
+			top: 142px
+			left: 80px
+			+media-pad
+				display: none
+
+		.sale_area
+			display: flex
+			justify-content: flex-end
+			overflow-x: hidden
+			+media-pad
+				overflow-x: hidden
+			&::-webkit-scrollbar 
+				display: none
+			+media-narrow
+				justify-content: center
+			.tabpane
+				width: 100%
+				flex-wrap: nowrap
+				justify-content: flex-start
+				+media-pad
+					flex-direction: column
+					justify-content: flex-start
+				+media-narrow
+					height: 100vh
+			.sale_list
+				max-width: 233px
+				left: 300px
+				position: relative
+				z-index: 1
+				+media-pad
+					max-width: unset
+					width: 100%
+					left: 0
+				.tab_btn7
+					+media-pad
+						img
+							content: url('../images/s3_pup_btn7_m.png')
+					&.active,&:hover
+						img
+							content: url('../images/s3_pup_btn7_on.png')
+							+media-pad
+								content: url('../images/s3_pup_btn7_on_m.png')
+					+media-narrow
+						padding: 0
+				.tab_btn8
+					position: relative
+					right: 30px
+					&.active,&:hover
+						img
+							content: url('../images/s3_pup_btn8_on.png')
+							+media-pad
+								content: url('../images/s3_pup_btn8_on_m.png')
+					+media-pad
+						right: 0px
+						img
+							content: url('../images/s3_pup_btn8_m.png')
+					+media-narrow
+						padding: 0
+				.tab_btn9
+					&.active,&:hover
+						img
+							content: url('../images/s3_pup_btn9_on.png')
+							+media-pad
+								content: url('../images/s3_pup_btn9_on_m.png')
+					+media-pad
+						img
+							content: url('../images/s3_pup_btn9_m.png')
+					+media-narrow
+						padding: 0
+
+			.sale_con
+				width: 100%
+				max-width: 900px
+				display: flex
+				justify-content: flex-end
+			+media-sp
+				height: 60vh
+			+media-narrow
+				margin: 0
+				padding: 0
+			.tab-content
+				margin-bottom: 0
+				max-width: 530px
+				.tab-pane
+					overflow: unset
+				+media-narrow
+					padding: 0
+				.d-flex
+					display: inline-block !important
+				
+	#v-pills-ranking
+		overflow: unset
+		.title
+			padding: 50px 0 20px
+		.con
+			position: relative
+		.s4_char
+			max-width: 305px
+			position: absolute
+			top: 0
+			right: 130px
+			img
+				+media-pad
+					opacity: 0
+
+.notice
+	position: fixed
+	width: 100vw
+	height: 100vh
+	top: 0px
+	left: 0px
+	background: #000000d2
+	text-align: center
+	display: none
+	z-index: 1080
+.wrapper
+	position: relative
+	width: 860px
+	height: 369px
+	margin: auto
+	// margin-top: 200px
+	text-align: center
+	max-width: 100%
+	// background: url('../images/notice.png') no-repeat center center
+	// background-size: 100%
+
+	.close
+		position: absolute
+		opacity: 1
+		cursor: pointer
+		transition: .3s all
+		&:hover
+			opacity: 1
+			filter: brightness(120%)
+		&.close1
+			right: -20px
+			top: -20px
+
+	.con
+		position: relative
+		// top: 16%
+		width: 100%
+		margin: auto
+		text-align: center
+
+@mixin modal-styles 
+	.modal-dialog 
+		max-width: 1000px 
+		pointer-events: unset 
+	.modal-content 
+		margin-top: 70px 
+		background: transparent 
+		.container 
+			padding: 0 
+
+#pup1
+	@include modal-styles
+#pup2
+	@include modal-styles
+#pup3
+	@include modal-styles
+#pup4
+	@include modal-styles
+#pup5
+	@include modal-styles
+#pup6
+	@include modal-styles
+
+
+#pup1, #pup2
+	button.btn
+		position: absolute
+		right: -105px
+		top: 20px
+		z-index: 1
+		+media-pad
+			right: -14px
+			top: 20px
+		+media-narrow
+			right: -20px
+			top: 40px
+
+#pup3,#pup4
+	button.btn
+		position: absolute
+		right: 55px
+		top: 15px
+		z-index: 1
+		+media-pad
+			right: 0px
+		+media-narrow
+			right: -22px
+			top: 35px
+
+#pup5,#pup6
+	button.btn
+		position: absolute
+		right: 178px
+		top: 15px
+		z-index: 1
+		+media-pad
+			right: 76px
+		+media-narrow
+			right: -20px
+			top: 33px
