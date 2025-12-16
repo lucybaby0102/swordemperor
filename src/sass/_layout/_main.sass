@@ -108,6 +108,7 @@ section
 	z-index: 99
 	+media-pctb
 		flex-wrap: nowrap
+		flex-shrink: 0
 	+media-pad
 		flex-direction: row
 		justify-content: center
@@ -117,6 +118,8 @@ section
 		filter: brightness(2)
 		max-width: 350px
 		width: 100%
+		+media-pctb
+			flex: 0 0 350px
 	.nav-link,.nav-link.active
 		border: unset
 		background-color: unset
