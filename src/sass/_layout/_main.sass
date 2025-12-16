@@ -94,7 +94,7 @@ section
 	background-size: cover
 	// overflow: hidden
 	+media-sptb
-		min-height: 93vh
+		min-height: auto
 
 
 .nav-pills
@@ -106,13 +106,17 @@ section
 	justify-content: center
 	top: 53px
 	z-index: 99
+	+media-pctb
+		flex-wrap: nowrap
 	+media-pad
 		flex-direction: row
 		justify-content: center
 		padding-left: 0px
 
 	.nav-link
-		// width: 40%
+		filter: brightness(2)
+		max-width: 350px
+		width: 100%
 	.nav-link,.nav-link.active
 		border: unset
 		background-color: unset
@@ -123,6 +127,9 @@ section
 		+media-narrow
 			padding: 0
 			width: 50%
+	.nav-link
+		&.active,&:hover
+			filter: unset
 	#v-pills-map-tab 
 		&.active,&:hover
 			img
@@ -142,58 +149,68 @@ section
 		&.active,&:hover
 			img
 			content: url('../images/tab_4_on.png')
+	a
+		img
+			display: block
 
 
 .tab-content
 	position: relative
 	width: 100%
 	// margin-bottom: 150px
-	// +media-pad
-	// 	margin: 0
+	+media-pad
+		margin: 0
 
 	.wrapper
 		position: relative
-		// left: 48%
+		left: 48%
 		top: 50%
-		// transform: translate(-45%, 0%)
+		transform: translate(-45%, 0%)
 		width: 1380px
 		max-width: 100%
-		height: 0px
-		padding-bottom: 43%
+		// height: 0px
+		height: auto
+		// padding-bottom: 43%
+		padding: 0
 		+media-pad
 			position: relative
-			padding-bottom: 100%
+			// padding-bottom: 100%
 			left: 45%
-			padding-bottom: 60%
+			// padding-bottom: 60%
 		+media-narrow
-			padding-bottom: 145%
+			padding-bottom: 20px
+			// height: 100vh
 
 	.tab-pane
-		position: absolute
+		position: relative
 		top: 0px
 		left: 0px
 		width: 100%
-		height: 100%
+		// height: 100%
+		height: auto
 		padding-top: 20px
-		overflow-y: scroll
+		// overflow-y: scroll
 		pointer-events: none
-		
+		overflow: visible
+		display: none
 		+media-narrow
-			padding: 20px 20px 0
+			padding: 20px 5px 0 5px
 		&.active
 			pointer-events: auto
+			display: block
 		.title
 			margin: auto
 			text-align: center
 		.con
 			margin: auto
 			text-align: center
-			height: 100%
+			// height: 100%
+			height: auto
 			width: 100%
-		+media-sptb
-			height: 80%
-		+media-pad
-			padding-top: 20px
+			+media-sptb
+				// height: 80%
+			+media-pad
+				padding-top: 20px
 	#v-pills-gifts
 		.char1
 			position: relative
@@ -208,7 +225,7 @@ section
 				align-items: center
 			+media-narrow
 				top: unset
-				bottom: 50px
+				// bottom: 50px
 				transform: scale(0.95)
 			a.s1_pup_btn1
 				+media-narrow
@@ -224,6 +241,8 @@ section
 		.event
 			position: relative
 			padding: 100px 0
+			+media-narrow
+				padding: 10px 0
 			.s1_3_char
 				position: absolute
 				top: 0
@@ -233,6 +252,8 @@ section
 						opacity: 0
 	#v-pills-swimsuit
 		padding-top: 50px
+		+media-narrow
+			padding-top: 30px
 		.open_area
 			position: relative
 		.summer_char
@@ -327,6 +348,8 @@ section
 			display: flex
 			justify-content: flex-end
 			overflow-x: hidden
+			+media-pc
+				padding-bottom: 5rem
 			+media-pad
 				overflow-x: hidden
 			&::-webkit-scrollbar 
@@ -341,7 +364,7 @@ section
 					flex-direction: column
 					justify-content: flex-start
 				+media-narrow
-					height: 100vh
+					height: auto
 			.sale_list
 				max-width: 233px
 				left: 300px
@@ -398,11 +421,12 @@ section
 			+media-narrow
 				margin: 0
 				padding: 0
+				height: auto
 			.tab-content
 				margin-bottom: 0
 				max-width: 530px
 				.tab-pane
-					overflow: unset
+					// overflow: visible
 				+media-narrow
 					padding: 0
 				.d-flex
@@ -434,15 +458,13 @@ section
 	display: none
 	z-index: 1080
 .wrapper
-	position: relative
-	width: 860px
-	height: 369px
-	margin: auto
-	// margin-top: 200px
-	text-align: center
-	max-width: 100%
-	// background: url('../images/notice.png') no-repeat center center
-	// background-size: 100%
+	// position: relative
+	// width: 860px
+	// height: 369px
+	// margin: auto
+	// text-align: center
+	// max-width: 100%
+
 
 	.close
 		position: absolute

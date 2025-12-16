@@ -5,22 +5,29 @@ aside,aside2
 	max-width: 20%
 	transition: transform .3s ease 0s
 	z-index: 1010 
+	+media-narrow
+		bottom: 5px
+li
+	transition: transform .35s cubic-bezier(0.25, 0.1, 0.25, 1)
+	&:hover
+		transform: scale(0.95)
 aside
-	right: 0px
+	right: 5px
 	top: 15%
 	width: 150px
 	+media-sptb
 		width: 125px
 	+media-pad
 		top: unset
-		right: 50%
+		// right: 5px
 		bottom: 0px
-		transform: translateX(50%)
-		max-width: 80%
+		// transform: translateX(50%)
+		max-width: 50%
 		width: 100%
 	+media-narrow
-		max-width: 50%
-		right: 30%
+		max-width: 45%
+		// right: 5px
+		bottom: 5px
 	ul
 		display: flex
 		flex-wrap: wrap
@@ -30,13 +37,16 @@ aside
 		+media-pad
 			flex-wrap: nowrap
 			flex-direction: row
-		li
+		li				
 			&:nth-child(1) 
 				img 
 					&:hover
 						content: url('../images/aside_2_on.png')
+
 					+media-pad
 						padding-right: 20px
+					+media-narrow
+						padding-right: 0px
 			&:nth-child(2) 
 				img
 					&:hover
@@ -48,24 +58,26 @@ aside
 					&:hover
 						filter: brightness(120%)
 						transition: .1s 0s
+			a
+				display: inline-block
 
 .aside2
 	left: 0px
 	top: 30%
-	width: 200px
+	width: 100%
+	max-width: 180px
 	+media-sptb
-		width: 140px
+		// width: 140px
 	+media-pad
-		width: 320px
+		width: 50%
 		max-width: 100%
 		top: unset
 		bottom: 0
 	+media-narrow
 		top: unset
 		left: 5%
-		bottom: 0px
-		width: 40%
-		max-width: 80%
+		width: 100%
+		max-width: 45%
 	ul
 		display: flex
 		flex-wrap: wrap
@@ -78,7 +90,7 @@ aside
 		+media-narrow
 			flex-wrap: nowrap
 			flex-direction: row
-			transform: translateY(13px)
+			// transform: translateY(13px)
 		li
 			&:nth-child(1) 
 				a
@@ -90,6 +102,9 @@ aside
 				+media-pad
 					max-width: 180px
 					width: 42%
+				+media-narrow
+					max-width: 80px
+					width: 100%
 			&:nth-child(2) 
 				a
 					transition: .3s .3s
@@ -98,4 +113,6 @@ aside
 						content: url('../images/aside_5_on.png')
 						+media-narrow
 							content: unset
+			a
+				display: inline-block
 
