@@ -1,5 +1,5 @@
 // media query
-// $media-narrow: 350px
+$media-narrow-s: 375px
 $media-narrow: 480px
 $media-pad: 768px
 $media-sp: 991px
@@ -8,7 +8,9 @@ $media-tablet: 992px
 $media-pc: 1200px
 $media-pcWide: 1001px
 
-
+@mixin media-narrow-s 
+	@media only screen and (max-width: $media-narrow) 
+		@content
 @mixin media-narrow 
 	@media only screen and (max-width: $media-narrow) 
 		@content
