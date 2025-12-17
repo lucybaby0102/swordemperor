@@ -433,6 +433,11 @@ section {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
+@media only screen and (max-width: 768px) {
+  .tab-content #v-pills-swimsuit .sunmmer_btn {
+    padding: 0 10px;
+  }
+}
 @media only screen and (max-width: 480px) {
   .tab-content #v-pills-swimsuit .sunmmer_btn {
     height: 100%;
@@ -732,39 +737,77 @@ section {
   }
 }
 
-.notice {
+#notice {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0px;
-  left: 0px;
-  background: rgba(0, 0, 0, 0.8235294118);
-  text-align: center;
+  inset: 0;
   display: none;
-  z-index: 1080;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
 }
 
-.wrapper .close {
+#notice.is-open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#notice.is-open .wrapper {
+  position: relative;
+  width: min(92vw, 520px);
+  background: url("../images/notice.png") center/100% 100% no-repeat;
+  padding: 26px 36px 36px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#notice.is-open .wrapper .close {
   position: absolute;
   opacity: 1;
   cursor: pointer;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
 }
-.wrapper .close:hover {
+#notice.is-open .wrapper .close:hover {
   opacity: 1;
   -webkit-filter: brightness(120%);
           filter: brightness(120%);
 }
-.wrapper .close.close1 {
-  right: -20px;
-  top: -20px;
+#notice.is-open .wrapper .close.close1 {
+  right: 6px;
+  top: 10px;
 }
-.wrapper .con {
-  position: relative;
-  width: 100%;
-  margin: auto;
-  text-align: center;
+#notice.is-open .wrapper .con {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.6;
+}
+#notice.is-open .wrapper .con .notice-title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+@media only screen and (min-width: 992px) {
+  #notice.is-open .wrapper .con .notice-title {
+    text-align: center;
+    font-size: 20px;
+    line-height: 45px;
+  }
+}
+#notice.is-open .wrapper .con .notice-list {
+  padding-left: 18px;
+  margin: 0;
+}
+#notice.is-open .wrapper .con .notice-list li {
+  margin: 6px 0;
+  list-style: decimal;
+  list-style-position: outside;
 }
 
 #pup1 .modal-dialog {
@@ -1042,14 +1085,13 @@ aside, aside2 {
     bottom: 5px;
   }
 }
-
-li {
+aside li, aside2 li {
   -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
   transition: -webkit-transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
   transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
   transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), -webkit-transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
-li:hover {
+aside li:hover, aside2 li:hover {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
@@ -1237,6 +1279,16 @@ aside ul li a {
 
 body {
   position: relative;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  pointer-events: none;
 }
 
 main {
@@ -1537,15 +1589,6 @@ main .con .main_signup {
   main .con .main_signup {
     width: 40%;
   }
-}
-
-#particles-js {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  pointer-events: none;
 }
 
 @media only screen and (max-width: 480px) {

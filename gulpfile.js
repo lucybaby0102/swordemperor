@@ -10,7 +10,7 @@ const paths = {
       'src/*.pug',
       '!src/**/_*.pug'   // 排除檔名以 _ 開頭的（如果你之後也想在 src 放 partial）
     ],
-
+	
     // 要「監聽變動」的 pug（包含 src/ 底下所有子資料夾）
     watch: 'src/**/*.pug',
 

@@ -53,6 +53,9 @@
         </div>
       </div>
     </nav>
+    <div id="particles-js">
+      <canvas class="particles-js-canvas-el"></canvas>
+    </div>
     <aside class="aside"> 
       <ul> 
             <li><a href="https://www.mangot5.com/Index/Member/Register?gname=hot#step-1" id="'hotcreg240711'" target="_blank"> <img src="images/aside_2.png" alt=""></a></li>
@@ -76,9 +79,6 @@
       <div class="char char1"><img class="wow animate__animated animate__bounceInLeft" data-wow-delay=".6s" src="images/main_char1.png" alt=""></div>
       <div class="logo wow animate__animated animate__fadeInDown" data-wow-delay=".6s"> <a href="https://hot.mangot5.com/hot/index" target="_blank"> <img src="images/main_logo.png" alt="新熱血江湖"></a></div>
     </main>
-    <div id="particles-js">
-      <canvas class="particles-js-canvas-el"></canvas>
-    </div>
     <section class="section_1">
       <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical"><a class="nav-link active" id="v-pills-map-tab" data-toggle="pill" href="#v-pills-map" role="tab" aria-controls="#v-pills-map" aria-selected="true"><img src="images/tab_1.png"></a><a class="nav-link " id="v-pills-gifts-tab" data-toggle="pill" href="#v-pills-gifts" role="tab" aria-controls="#v-pills-gifts" aria-selected="false"><img src="images/tab_2.png"></a><a class="nav-link " id="v-pills-swimsuit-tab" data-toggle="pill" href="#v-pills-swimsuit" role="tab" aria-controls="#v-pills-swimsuit" aria-selected="false"><img src="images/tab_3.png"></a><a class="nav-link " id="v-pills-ranking-tab" data-toggle="pill" href="#v-pills-ranking" role="tab" aria-controls="#v-pills-ranking" aria-selected="false"><img src="images/tab_4.png"></a>
       </div>
@@ -153,8 +153,16 @@
     </section>
     <div class="notice" id="notice">
       <div class="wrapper"> 
-        <div class="close close1" id="close1"><img src="images/notice_x.png" alt=""></div>
-        <div class="con"> <img src="images/notice_con.png" alt=""></div>
+        <button class="close close1" id="close1" type="button" aria-label="Close"><img src="images/notice_x.png" alt=""></button>
+        <div class="con"> 
+          <h3 class="notice-title">活動公告</h3>
+          <ol class="notice-list">
+            <li>實際活動內容與時間以遊戲內公告為準。</li>
+            <li>活動期間如遇不可抗力因素，主辦單位保留變更、終止之權利。</li>
+            <li>若發現異常行為或違規操作，將取消資格並回收獎勵。</li>
+            <li>獎勵發放時間依系統排程為準，可能有延遲。</li>
+          </ol>
+        </div>
       </div>
     </div>
         <div class="modal fade" id="pup1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

@@ -52,8 +52,7 @@ main.text-center#home
 	div(class="logo wow animate__animated animate__fadeInDown" data-wow-delay=".6s") 
 		a(href="https://hot.mangot5.com/hot/index" target="_blank") 
 			img(src="images/main_logo.png", alt="新熱血江湖")
-#particles-js
-	canvas.particles-js-canvas-el
+
 
 section.section_1
 
@@ -134,10 +133,16 @@ section.section_1
 
 div#notice.notice
 	.wrapper 
-		#close1.close.close1
+		button#close1.close.close1(type="button" aria-label="Close")
 			img(src="images/notice_x.png", alt="")
 		.con 
-			img(src="images/notice_con.png", alt="")
+			//- img(src="images/notice_con.png", alt="")
+			h3.notice-title 活動公告
+			ol.notice-list
+				li 實際活動內容與時間以遊戲內公告為準。
+				li 活動期間如遇不可抗力因素，主辦單位保留變更、終止之權利。
+				li 若發現異常行為或違規操作，將取消資格並回收獎勵。
+				li 獎勵發放時間依系統排程為準，可能有延遲。
 
 
 mixin pop_modal(id, img)

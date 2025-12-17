@@ -42,17 +42,51 @@ $(function () {
 		}
 	});
 
-// 週年活動廣宣彈跳視窗 開關
-	$("#pup_notice").on("click", function () {
-		$("#notice").fadeIn()
-	})
-	$("#close1").on("click", function () {
-		$("#notice").fadeOut()
-	})
-	$("#close2").on("click", function () {
-		$("#notice").fadeOut()
-	})
+// 彈跳視窗 開關
+	// $("#pup_notice").on("click", function () {
+	// 	$("#notice").fadeIn()
+	// })
+	// $("#close1").on("click", function () {
+	// 	$("#notice").fadeOut()
+	// })
+	// $("#close2").on("click", function () {
+	// 	$("#notice").fadeOut()
+	// })
+	function openNotice() {
+		$("#notice")
+		.addClass("is-open")
+		.stop(true, true)
+		.fadeIn(200); // 不要動畫就改 .show()
 
+		$("body").css("overflow", "hidden");
+	}
+
+	function closeNotice() {
+		$("#notice")
+		.removeClass("is-open")
+		.stop(true, true)
+		.fadeOut(200); // 不要動畫就改 .hide()
+
+		$("body").css("overflow", "");
+	}
+
+	// 打開
+	$("#pup_notice").on("click", function (e) {
+		e.preventDefault();
+		openNotice();
+	});
+
+	// 關閉
+	$("#close1, #close2").on("click", function (e) {
+		e.preventDefault();
+		closeNotice();
+	});
+
+	// 點遮罩關閉（可選）
+	$("#notice").on("click", function (e) {
+		if (e.target.id === "notice") closeNotice();
+	});
 
 });
+
 
