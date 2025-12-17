@@ -201,7 +201,6 @@ section {
   background: url("../images/nav_pills_bg.png") no-repeat center bottom;
   background-size: cover;
   position: sticky;
-  padding-left: 50px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -210,6 +209,7 @@ section {
       -ms-flex-pack: center;
           justify-content: center;
   top: 53px;
+  gap: 8px;
   z-index: 99;
 }
 @media only screen and (min-width: 992px) {
@@ -240,9 +240,13 @@ section {
 }
 @media only screen and (min-width: 992px) {
   .nav-pills .nav-link {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 350px;
-            flex: 0 0 350px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 0px;
+            flex: 1 1 0;
+    max-width: none;
+    min-width: 0;
+    padding: 6px;
+    line-height: 0;
   }
 }
 .nav-pills .nav-link, .nav-pills .nav-link.active {
@@ -279,6 +283,8 @@ section {
   content: url("../images/tab_4_on.png");
 }
 .nav-pills a img {
+  width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -293,19 +299,16 @@ section {
 }
 .tab-content .wrapper {
   position: relative;
-  left: 48%;
   top: 50%;
-  -webkit-transform: translate(-45%, 0%);
-          transform: translate(-45%, 0%);
-  width: 1380px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1380px;
   height: auto;
+  margin: auto;
   padding: 0;
 }
 @media only screen and (max-width: 768px) {
   .tab-content .wrapper {
     position: relative;
-    left: 45%;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -1111,7 +1114,7 @@ aside {
     top: unset;
     bottom: 0px;
     max-width: 50%;
-    width: 100%;
+    width: 46%;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -1182,7 +1185,7 @@ aside ul li a {
 
 .aside2 {
   left: 0px;
-  top: 30%;
+  bottom: 20px;
   width: 100%;
   max-width: 180px;
 }
@@ -1190,13 +1193,11 @@ aside ul li a {
   .aside2 {
     width: 50%;
     max-width: 100%;
-    top: unset;
     bottom: 0;
   }
 }
 @media only screen and (max-width: 480px) {
   .aside2 {
-    top: unset;
     left: 5%;
     width: 100%;
     max-width: 45%;
@@ -1331,17 +1332,22 @@ main .char.char1 {
   left: 18%;
   top: 47%;
 }
+@media only screen and (max-width: 1200px) {
+  main .char.char1 {
+    width: 19%;
+    left: 17%;
+  }
+}
 @media only screen and (max-width: 768px) {
   main .char.char1 {
-    width: 36%;
-    left: 17%;
+    width: 26%;
     top: 45%;
   }
 }
 @media only screen and (max-width: 480px) {
   main .char.char1 {
-    width: 34%;
-    left: 21%;
+    width: 32%;
+    left: 19%;
   }
 }
 main .char.char2 {
@@ -1359,7 +1365,7 @@ main .char.char2 {
 }
 @media only screen and (max-width: 768px) {
   main .char.char2 {
-    width: 51%;
+    width: 41%;
     right: 41%;
     top: 40%;
   }
@@ -1367,9 +1373,8 @@ main .char.char2 {
 @media only screen and (max-width: 480px) {
   main .char.char2 {
     top: 46%;
-    width: 63%;
-    -webkit-transform: translate(58%, -50%);
-            transform: translate(58%, -50%);
+    width: 49%;
+    right: 37%;
   }
 }
 main .char.char3 {
@@ -1388,14 +1393,13 @@ main .char.char3 {
   main .char.char3 {
     right: 18%;
     top: 41%;
-    width: 43%;
+    width: 33%;
   }
 }
 @media only screen and (max-width: 480px) {
   main .char.char3 {
-    width: 40%;
-    -webkit-transform: translate(55%, -50%);
-            transform: translate(55%, -50%);
+    width: 37%;
+    top: 44%;
   }
 }
 main .char.char4 {
@@ -1412,13 +1416,13 @@ main .char.char4 {
 @media only screen and (max-width: 768px) {
   main .char.char4 {
     left: 35%;
-    width: 44%;
+    width: 34%;
     top: 44%;
   }
 }
 @media only screen and (max-width: 480px) {
   main .char.char4 {
-    width: 50%;
+    width: 41%;
     left: 37%;
     top: 50%;
   }
@@ -1447,7 +1451,9 @@ main .logo {
   max-width: 100%;
   width: 300px;
   top: 80px;
-  left: 150px;
+  left: 0;
+  margin: auto;
+  right: 0;
   z-index: 99;
   display: block;
   -webkit-filter: brightness(100%) drop-shadow(0px 0px 15px #000);
@@ -1465,35 +1471,31 @@ main .logo:hover {
   main .logo {
     left: 0%;
     width: 100%;
-    top: 26%;
-  }
-  main .logo a {
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-  }
-}
-@media only screen and (max-width: 991px) {
-  main .logo {
-    top: 65%;
+    top: 22%;
   }
 }
 @media only screen and (max-width: 768px) {
   main .logo {
-    top: 60%;
+    top: 28%;
   }
 }
 @media only screen and (max-width: 480px) {
   main .logo {
-    top: 65%;
+    width: 60%;
+    top: 41%;
+  }
+  main .logo a {
+    display: inline-block;
   }
 }
 main .con {
   position: absolute;
   width: 100vw;
-  left: 0px;
+  max-width: 1400px;
+  left: 0;
+  right: 0;
   top: 20%;
+  margin: auto;
   z-index: 5;
 }
 @media only screen and (max-width: 1200px) {
@@ -1501,9 +1503,15 @@ main .con {
     top: 30%;
   }
 }
+@media only screen and (max-width: 768px) {
+  main .con {
+    top: 33%;
+    width: 95%;
+  }
+}
 @media only screen and (max-width: 480px) {
   main .con {
-    top: 40%;
+    top: 50%;
   }
 }
 main .con .title {
@@ -1521,11 +1529,6 @@ main .con .title {
 @media only screen and (max-width: 768px) {
   main .con .title {
     width: 100%;
-  }
-}
-@media only screen and (max-width: 480px) {
-  main .con .title {
-    width: 95%;
   }
 }
 main .con .sub_title {

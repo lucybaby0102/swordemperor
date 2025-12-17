@@ -41,13 +41,15 @@ main
       max-width: 272px
       left: 18%
       top: 47%
-      +media-pad
-        width: 36%
+      +media-sptb
+        width: 19%
         left: 17%
+      +media-pad
+        width: 26%
         top: 45%
       +media-narrow
-        width: 34%
-        left: 21%
+        width: 32%
+        left: 19%
       
 
     &.char2
@@ -59,13 +61,13 @@ main
       +media-sptb
         width: 30%
       +media-pad
-        width: 51%
+        width: 41%
         right: 41%
         top: 40%
       +media-narrow
         top: 46%
-        width: 63%
-        transform: translate(58%, -50%)
+        width: 49%
+        right: 37%
     &.char3
       max-width: 338px
       right: 17%
@@ -76,10 +78,11 @@ main
       +media-pad
         right: 18%
         top: 41%
-        width: 43%
+        width: 33%
       +media-narrow
-        width: 40%
-        transform: translate(55%, -50%)
+        width: 37%
+        top: 44%
+        // transform: translate(55%, -50%)
     &.char4
       max-width: 337px
       left: 25%
@@ -89,10 +92,10 @@ main
         width: 25%
       +media-pad
         left: 35%
-        width: 44%
+        width: 34%
         top: 44%
       +media-narrow
-        width: 50%
+        width: 41%
         left: 37%
         top: 50%
 
@@ -117,7 +120,9 @@ main
     max-width: 100%
     width: 300px
     top: 80px
-    left: 150px
+    left: 0
+    margin: auto
+    right: 0
     z-index: 99
     display: block
     filter: brightness(100%) drop-shadow(0px 0px 15px #000)
@@ -127,29 +132,35 @@ main
     +media-sptb 
       left: 0%
       width: 100%
-      top: 26%
-      a
-        position: absolute
-        left: 50%
-        transform: translateX(-50%)
+      top: 22%
     +media-sp
-      top: 65%
+      // top: 65%
     +media-pad
-      top: 60%
+      top: 28%
     +media-narrow
-      top: 65%
+      width: 60%
+      top: 41%
+      a
+        display: inline-block
 
   // 主視覺標題
   .con
     position: absolute
     width: 100vw
-    left: 0px
+    max-width: 1400px
+    left: 0
+    right: 0
     top: 20%
+    margin: auto
     z-index: 5
     +media-sptb
       top: 30%
+    +media-pad
+      top: 33%
+      width: 95%
     +media-narrow
-      top: 40%
+      top: 50%
+      
     .title
       position: relative
       max-width: 100%
@@ -160,8 +171,8 @@ main
         width: 70%
       +media-pad
         width: 100%
-      +media-narrow
-        width: 95%
+      // +media-narrow
+      //   width: 100%
     .sub_title
       position: relative
       max-width: 80%
